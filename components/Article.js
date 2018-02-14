@@ -3,8 +3,8 @@ import CommentList from './CommentList'
 
 class Article extends Component {
     state = {
-        isOpenComment: true
-    }
+        isOpenComment: false
+    };
 
 
     render(){
@@ -14,9 +14,18 @@ class Article extends Component {
         return(
             <div>
                 <p>{article.text}</p>
+                <button onClick={this.handleClickComment}>
+                    {this.state.isOpenComment ? 'close comments' : 'open comments'}
+                </button>
                 {comments}
             </div>
         )
+    }
+
+    handleClickComment = () => {
+        this.setState({
+            isOpenComment: !this.state.isOpenComment
+        })
     }
 }
 

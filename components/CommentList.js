@@ -1,15 +1,12 @@
 import React, {Component} from 'react'
-import Comment from './CommentList'
+import Comment from './Comment'
 
 class CommentList extends Component {
     render(){
         const {commentList} = this.props;
         console.log(commentList);
         const commentElements = commentList.map((comment, index) => <li key={index}>
-            <div>
-                <h4>{comment.user}</h4>
-                <p>{comment.text}</p>
-            </div>
+            <Comment comment={comment} />
         </li>);
         return (
             <ul>
