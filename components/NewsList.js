@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-import Article from './Article'
+import ArticleWrapper from './ArticleWrapper'
 
 class NewsList extends Component {
     render(){
         const articleElements = this.props.articles.map((article, index) => <li key={index}>
-            <Article article = {article}/>
-        </li>)
+            <ArticleWrapper article = {article}/>
+        </li>);
         return (
             <ul>
                 {articleElements}

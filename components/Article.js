@@ -1,34 +1,23 @@
 import React, {Component} from 'react'
+import CommentList from './CommentList'
 
 class Article extends Component {
     state = {
-        isOpen: false
-    };
-
-
-    render() {
-        const {article} = this.props;
-        const body = this.state.isOpen && <section>{article.text}</section>
-        return (
-            <div>
-                <h2>
-                    {article.title}
-                </h2>
-                <button onClick={this.handleClick}>
-                    {this.state.isOpen ? 'close' : 'open'}
-                </button>
-                {body}
-                <h3>creation date: {(new Date(article.date)).toDateString()}</h3>
-            </div>
-        )
+        isOpenComment: true
     }
 
-    handleClick = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
+
+    render(){
+        const {article} = this.props;
+        console.log(article.comments);
+        const comments = this.state.isOpenComment && <CommentList commentList={article.comments}/>;
+        return(
+            <div>
+                <p>{article.text}</p>
+                {comments}
+            </div>
+        )
     }
 }
 
 export default Article
-
