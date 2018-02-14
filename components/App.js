@@ -7,6 +7,8 @@ function App() {
         <div>
             <h1>App name</h1>
             <Article article={articles[0]} />
+            <Article article={articles[1]} />
+            <Article article={articles[2]} />
         </div>
     )
 }
