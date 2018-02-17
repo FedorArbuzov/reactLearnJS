@@ -31,5 +31,6 @@ class ArticleWrapper extends Component {
     }
 }
 
+
 export default ArticleWrapper
 
